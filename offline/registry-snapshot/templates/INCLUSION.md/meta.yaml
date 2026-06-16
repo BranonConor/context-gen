@@ -1,0 +1,72 @@
+id: INCLUSION.md
+name: Inclusion Guidelines
+version: 1.0.0
+author: BranonConor
+description: Accessibility, inclusion, and equity standards for AI agents and developers
+
+category: culture
+tags:
+  - inclusion
+  - a11y
+  - equity
+  - diversity
+
+consumed_by:
+  - any
+
+pairs_well_with:
+  - A11Y.md
+  - DESIGN.md
+
+conflicts_with: []
+
+questions:
+  - key: project_name
+    prompt: What is your project name?
+    type: text
+    required: true
+
+  - key: team_size
+    prompt: What is your team size?
+    type: select
+    required: false
+    default: small
+    options:
+      - value: solo
+        label: Solo project
+      - value: small
+        label: Small team (2–10)
+      - value: medium
+        label: Medium team (11–50)
+      - value: large
+        label: Large team (50+)
+
+  - key: frameworks
+    prompt: Which frontend frameworks does your project use?
+    type: multiselect
+    required: false
+    options:
+      - React
+      - Vue
+      - Angular
+      - Svelte
+      - None
+
+  - key: wcag_level
+    prompt: What WCAG conformance level does your project target?
+    type: select
+    required: false
+    default: AA
+    options:
+      - value: A
+        label: "Level A (minimum)"
+      - value: AA
+        label: "Level AA (recommended)"
+      - value: AAA
+        label: "Level AAA (enhanced)"
+
+  - key: inclusive_language_policy
+    prompt: Describe your inclusive language policy (press enter for default)
+    type: text
+    required: false
+    default: "Avoid gendered terms, ableist language, and culturally insensitive metaphors in all code, comments, and docs."

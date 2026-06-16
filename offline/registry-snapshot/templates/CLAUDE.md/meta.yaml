@@ -1,0 +1,59 @@
+id: CLAUDE.md
+name: Claude Agent Instructions
+version: 1.0.0
+author: community
+description: Project-specific instructions for Anthropic Claude coding agent
+
+category: agent
+tags:
+  - claude
+  - anthropic
+  - agent
+
+consumed_by:
+  - claude
+
+pairs_well_with:
+  - AGENTS.md
+
+conflicts_with: []
+
+questions:
+  - key: project_name
+    prompt: What is your project name?
+    type: text
+    required: true
+
+  - key: project_description
+    prompt: Briefly describe what this project does
+    type: text
+    required: false
+    default: "A software project"
+
+  - key: tech_stack
+    prompt: What is your primary tech stack?
+    type: multiselect
+    required: false
+    options:
+      - TypeScript
+      - JavaScript
+      - Python
+      - Ruby
+      - Go
+      - Rust
+      - Java
+      - C#
+      - Other
+
+  - key: preferred_response_style
+    prompt: How should Claude respond — concise or detailed?
+    type: select
+    required: false
+    default: balanced
+    options:
+      - value: concise
+        label: Concise — short answers, minimal explanation
+      - value: balanced
+        label: Balanced — explain when it adds value
+      - value: detailed
+        label: Detailed — thorough explanations always

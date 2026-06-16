@@ -1,0 +1,62 @@
+id: A11Y.md
+name: Accessibility Standards
+version: 1.0.0
+author: community
+description: WCAG compliance targets and accessibility patterns for the project
+
+category: quality
+tags:
+  - a11y
+  - wcag
+  - accessibility
+
+consumed_by:
+  - any
+
+pairs_well_with:
+  - INCLUSION.md
+  - DESIGN.md
+
+conflicts_with: []
+
+questions:
+  - key: project_name
+    prompt: What is your project name?
+    type: text
+    required: true
+
+  - key: wcag_level
+    prompt: What WCAG conformance level does your project target?
+    type: select
+    required: false
+    default: AA
+    options:
+      - value: A
+        label: "Level A (minimum)"
+      - value: AA
+        label: "Level AA (recommended)"
+      - value: AAA
+        label: "Level AAA (enhanced)"
+
+  - key: primary_audience
+    prompt: Describe your primary user audience
+    type: text
+    required: false
+    default: "General public, including users with disabilities"
+
+  - key: ui_framework
+    prompt: What UI framework are you using?
+    type: select
+    required: false
+    default: none
+    options:
+      - value: react
+        label: React
+      - value: vue
+        label: Vue
+      - value: angular
+        label: Angular
+      - value: svelte
+        label: Svelte
+      - value: none
+        label: None / vanilla

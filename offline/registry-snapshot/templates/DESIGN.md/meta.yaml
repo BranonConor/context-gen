@@ -1,0 +1,63 @@
+id: DESIGN.md
+name: Design System Conventions
+version: 1.0.0
+author: community
+description: Design tokens, component patterns, and visual language for the project
+
+category: design
+tags:
+  - design
+  - ui
+  - tokens
+  - components
+
+consumed_by:
+  - any
+
+pairs_well_with:
+  - A11Y.md
+  - INCLUSION.md
+
+conflicts_with: []
+
+questions:
+  - key: project_name
+    prompt: What is your project name?
+    type: text
+    required: true
+
+  - key: design_system
+    prompt: Do you use an existing design system?
+    type: select
+    required: false
+    default: none
+    options:
+      - value: none
+        label: No — we have our own
+      - value: tailwind
+        label: Tailwind CSS
+      - value: material
+        label: Material Design / MUI
+      - value: primer
+        label: GitHub Primer
+      - value: chakra
+        label: Chakra UI
+      - value: shadcn
+        label: shadcn/ui
+      - value: other
+        label: Other
+
+  - key: token_format
+    prompt: How are design tokens defined?
+    type: select
+    required: false
+    default: css_vars
+    options:
+      - value: css_vars
+        label: CSS custom properties (--color-primary)
+      - value: js_object
+        label: JavaScript/TypeScript object
+      - value: json
+        label: JSON / Style Dictionary
+      - value: none
+        label: Not using tokens yet

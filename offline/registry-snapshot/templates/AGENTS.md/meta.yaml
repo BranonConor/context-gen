@@ -1,0 +1,78 @@
+id: AGENTS.md
+name: Multi-Agent Context
+version: 1.0.0
+author: community
+description: General instructions and conventions consumed by any AI coding agent
+
+category: agent
+tags:
+  - agent
+  - copilot
+  - cursor
+  - claude
+  - gemini
+
+consumed_by:
+  - copilot
+  - cursor
+  - claude
+  - gemini
+  - any
+
+pairs_well_with:
+  - CLAUDE.md
+  - INCLUSION.md
+
+conflicts_with: []
+
+questions:
+  - key: project_name
+    prompt: What is your project name?
+    type: text
+    required: true
+
+  - key: project_description
+    prompt: Briefly describe what this project does
+    type: text
+    required: false
+    default: "A software project"
+
+  - key: tech_stack
+    prompt: What is your primary tech stack?
+    type: multiselect
+    required: false
+    options:
+      - TypeScript
+      - JavaScript
+      - Python
+      - Ruby
+      - Go
+      - Rust
+      - Java
+      - C#
+      - Other
+
+  - key: test_framework
+    prompt: What testing framework do you use?
+    type: select
+    required: false
+    default: none
+    options:
+      - value: jest
+        label: Jest
+      - value: vitest
+        label: Vitest
+      - value: pytest
+        label: pytest
+      - value: rspec
+        label: RSpec
+      - value: go_test
+        label: go test
+      - value: none
+        label: None / not specified
+
+  - key: coding_style
+    prompt: Any specific coding style or conventions to follow?
+    type: text
+    required: false
+    default: "Follow the conventions already established in the codebase."
