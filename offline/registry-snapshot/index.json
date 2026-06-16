@@ -7,9 +7,21 @@
       "name": "Multi-Agent Context",
       "description": "General instructions and conventions consumed by any AI coding agent",
       "category": "agent",
-      "tags": ["agent", "copilot", "cursor", "claude", "gemini"],
-      "consumed_by": ["copilot", "cursor", "claude", "gemini", "any"],
-      "trending": true,
+      "tags": [
+        "agent",
+        "copilot",
+        "cursor",
+        "claude",
+        "gemini"
+      ],
+      "consumed_by": [
+        "copilot",
+        "cursor",
+        "claude",
+        "gemini",
+        "any"
+      ],
+      "trending": false,
       "version": "1.0.0",
       "author": "community"
     },
@@ -18,41 +30,68 @@
       "name": "Claude Agent Instructions",
       "description": "Project-specific instructions for Anthropic Claude coding agent",
       "category": "agent",
-      "tags": ["claude", "anthropic", "agent"],
-      "consumed_by": ["claude"],
-      "trending": true,
+      "tags": [
+        "claude",
+        "anthropic",
+        "agent"
+      ],
+      "consumed_by": [
+        "claude"
+      ],
+      "trending": false,
       "version": "1.0.0",
       "author": "community"
     },
     {
       "id": "INCLUSION.md",
       "name": "Inclusion Guidelines",
-      "description": "Accessibility, inclusion, and equity standards for AI agents and developers",
+      "description": "Inclusion context document for AI agents — ported from the inclusion.md CLI",
       "category": "culture",
-      "tags": ["inclusion", "a11y", "equity", "diversity"],
-      "consumed_by": ["any"],
-      "trending": true,
-      "version": "1.0.0",
-      "author": "BranonConor"
-    },
-    {
-      "id": "A11Y.md",
-      "name": "Accessibility Standards",
-      "description": "WCAG compliance targets and accessibility patterns for the project",
-      "category": "quality",
-      "tags": ["a11y", "wcag", "accessibility"],
-      "consumed_by": ["any"],
+      "tags": [
+        "inclusion",
+        "a11y",
+        "equity",
+        "diversity",
+        "accessibility"
+      ],
+      "consumed_by": [
+        "any"
+      ],
       "trending": false,
-      "version": "1.0.0",
-      "author": "community"
+      "version": "2.0.0",
+      "author": "BranonConor"
     },
     {
       "id": "DESIGN.md",
       "name": "Design System Conventions",
       "description": "Design tokens, component patterns, and visual language for the project",
       "category": "design",
-      "tags": ["design", "ui", "tokens", "components"],
-      "consumed_by": ["any"],
+      "tags": [
+        "design",
+        "ui",
+        "tokens",
+        "components"
+      ],
+      "consumed_by": [
+        "any"
+      ],
+      "trending": false,
+      "version": "1.0.0",
+      "author": "community"
+    },
+    {
+      "id": "A11Y.md",
+      "name": "Accessibility Standards",
+      "description": "WCAG compliance targets and accessibility patterns for the project",
+      "category": "quality",
+      "tags": [
+        "a11y",
+        "wcag",
+        "accessibility"
+      ],
+      "consumed_by": [
+        "any"
+      ],
       "trending": false,
       "version": "1.0.0",
       "author": "community"

@@ -1,8 +1,8 @@
 id: INCLUSION.md
 name: Inclusion Guidelines
-version: 1.0.0
+version: 2.0.0
 author: BranonConor
-description: Accessibility, inclusion, and equity standards for AI agents and developers
+description: Inclusion context document for AI agents — ported from the inclusion.md CLI
 
 category: culture
 tags:
@@ -10,6 +10,7 @@ tags:
   - a11y
   - equity
   - diversity
+  - accessibility
 
 consumed_by:
   - any
@@ -20,53 +21,145 @@ pairs_well_with:
 
 conflicts_with: []
 
+# ── Part 1: Project Context ─────────────────────────────────────────────────
+# These fill in Section 1 of the document. Be specific — generic answers
+# make for generic guidance.
 questions:
-  - key: project_name
-    prompt: What is your project name?
+  - key: product
+    prompt: What does this project do?
     type: text
     required: true
+    default: "A short description of what this software does."
 
-  - key: team_size
-    prompt: What is your team size?
-    type: select
-    required: false
-    default: small
-    options:
-      - value: solo
-        label: Solo project
-      - value: small
-        label: Small team (2–10)
-      - value: medium
-        label: Medium team (11–50)
-      - value: large
-        label: Large team (50+)
-
-  - key: frameworks
-    prompt: Which frontend frameworks does your project use?
-    type: multiselect
-    required: false
-    options:
-      - React
-      - Vue
-      - Angular
-      - Svelte
-      - None
-
-  - key: wcag_level
-    prompt: What WCAG conformance level does your project target?
-    type: select
-    required: false
-    default: AA
-    options:
-      - value: A
-        label: "Level A (minimum)"
-      - value: AA
-        label: "Level AA (recommended)"
-      - value: AAA
-        label: "Level AAA (enhanced)"
-
-  - key: inclusive_language_policy
-    prompt: Describe your inclusive language policy (press enter for default)
+  - key: primaryUsers
+    prompt: Who have you intentionally designed for?
     type: text
     required: false
-    default: "Avoid gendered terms, ableist language, and culturally insensitive metaphors in all code, comments, and docs."
+    default: "Describe your primary users."
+
+  - key: underservedUsers
+    prompt: Who do you know you haven't designed for well yet?
+    type: text
+    required: false
+    default: "Document a real gap (e.g. screen reader users on the dashboard; Spanish-language onboarding)."
+
+  - key: distribution
+    prompt: "Where is this software used? (geography, devices, network, assistive tech)"
+    type: text
+    required: false
+    default: "Web/iOS/Android, primary regions, languages, common assistive technologies."
+
+  - key: stakes
+    prompt: What happens when this software excludes someone?
+    type: text
+    required: false
+    default: "Describe the real-world cost (e.g. loss of access to healthcare, employment, civic services)."
+
+  # ── Part 2: Design Decisions (all optional, all skippable) ──────────────
+  # Grounded in: ABLEIST (arxiv.org/abs/2510.10998), Kat Holmes — Mismatch
+
+  - key: primaryAudience
+    prompt: "Design Decisions — Who do you primarily build for?"
+    type: text
+    required: false
+    default: ""
+
+  - key: implicitDefaults
+    prompt: "Design Decisions — What 'default user' assumptions live inside your product today?"
+    type: text
+    required: false
+    default: ""
+
+  - key: authMethods
+    prompt: "Auth & Access — How do people get into your product? What auth methods do you support?"
+    type: text
+    required: false
+    default: ""
+
+  - key: authExcluded
+    prompt: "Auth & Access — Is there anyone who can't use your authentication system right now?"
+    type: text
+    required: false
+    default: ""
+
+  - key: authReason
+    prompt: "Auth & Access — Why did you choose that authentication method?"
+    type: text
+    required: false
+    default: ""
+
+  - key: infoCollected
+    prompt: "Info Collection — What personal information do you ask people to provide?"
+    type: text
+    required: false
+    default: ""
+
+  - key: infoRationale
+    prompt: "Info Collection — For any required personal information, why is it required?"
+    type: text
+    required: false
+    default: ""
+
+  - key: interactionModes
+    prompt: "Interaction Model — How do people interact with your product?"
+    type: text
+    required: false
+    default: ""
+
+  - key: unsupportedPatterns
+    prompt: "Interaction Model — Are there interaction patterns you consciously don't support?"
+    type: text
+    required: false
+    default: ""
+
+  - key: languages
+    prompt: "Communication — What language(s) do you currently support?"
+    type: text
+    required: false
+    default: ""
+
+  - key: communicationStyle
+    prompt: "Communication — What communication style(s) are you optimizing for?"
+    type: text
+    required: false
+    default: ""
+
+  - key: knownBreakage
+    prompt: "Edge Cases — What's one scenario where your product might not work?"
+    type: text
+    required: false
+    default: ""
+
+  - key: unexpectedUsers
+    prompt: "Edge Cases — Who might use your product in ways you didn't expect?"
+    type: text
+    required: false
+    default: ""
+
+  # ── Part 3: Maintenance ─────────────────────────────────────────────────
+  - key: owner
+    prompt: Who owns this file? (person or team)
+    type: text
+    required: false
+    default: "An accountable person or team"
+
+  - key: cadence
+    prompt: How often will this file be reviewed?
+    type: select
+    required: false
+    default: quarterly
+    options:
+      - value: monthly
+        label: Monthly
+      - value: quarterly
+        label: "Quarterly (recommended)"
+      - value: biannual
+        label: Twice a year
+      - value: annual
+        label: Annually (minimum)
+
+  - key: feedback
+    prompt: How can users and contributors report exclusionary patterns?
+    type: text
+    required: false
+    default: "Open an issue on this repository, or contact the owner directly."
